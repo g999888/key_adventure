@@ -389,7 +389,11 @@ var Keyboard = function()
 {
 	var keysPressed = {};
 	
-	window.onkeydown = function(e) { if (keysPressed[e.keyCode]!=2) {keysPressed[e.keyCode] = 1;} };
+	window.onkeydown = function(e) 
+					{ 
+						if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) { e.preventDefault(); } ;
+						if (keysPressed[e.keyCode]!=2) {keysPressed[e.keyCode] = 1;}
+					};
 	window.onkeyup =   function(e) { keysPressed[e.keyCode] = 0;	};
 	this.isDown =      function(keyCode) { return keysPressed[keyCode] === 1; };
 	this.waitRelease = function(keyCode) { keysPressed[keyCode] = 2; };
