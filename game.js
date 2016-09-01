@@ -357,17 +357,17 @@ function touchplayer()
 {
 	var px1, px2, py1, py2;
 
-	px1 = player.center.x+2; px2 = player.center.x+TileSize-3;
-	py1 = player.center.y+2; py2 = player.center.y+TileSize-3;
+	px1 = player.center.x+4; px2 = player.center.x+TileSize-5;
+	py1 = player.center.y+4; py2 = player.center.y+TileSize-5;
 		
 	var hit = false;
 	
 	for (var i=people.length-1; i>=1; i--)
 	{
-		if (py2 < people[i].center.y+2) continue;
-		if (py1 > people[i].center.y+TileSize-3) continue;
-		if (px2 < people[i].center.x+2) continue;
-		if (px1 > people[i].center.x+TileSize-3) continue;
+		if (py2 < people[i].center.y+4) continue;
+		if (py1 > people[i].center.y+TileSize-5) continue;
+		if (px2 < people[i].center.x+4) continue;
+		if (px1 > people[i].center.x+TileSize-5) continue;
 		hit = true; break;
 	}
 
